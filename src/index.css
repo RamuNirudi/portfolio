@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Outfit", system-ui, -apple-system, sans-serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html {
+    background-color: #F2F6FB;
+    color: #0E1C36;
+    font-family: var(--font-sans);
+    scroll-behavior: auto;
+  }
+
+  body {
+    background-color: #F2F6FB;
+    color: #0E1C36;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-mono {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+
+  *:focus-visible {
+    outline: 2px solid #1463FF;
+    outline-offset: 2px;
+  }
+}
+
+/* Cool precision engineering blueprint background grid */
+.engineering-grid-bg {
+  background-image:
+    linear-gradient(to right, rgba(20, 99, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(20, 99, 255, 0.06) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.engineering-grid-fine {
+  background-image:
+    linear-gradient(to right, rgba(14, 28, 54, 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(14, 28, 54, 0.045) 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+
+/* Cool slate scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #E8F0FA;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #B8CBE3;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #1463FF;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
